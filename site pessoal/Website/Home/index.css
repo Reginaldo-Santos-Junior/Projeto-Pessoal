@@ -11,6 +11,7 @@ html{
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
+    border-bottom: black 1px solid;
   }
   
   .hero .container {
