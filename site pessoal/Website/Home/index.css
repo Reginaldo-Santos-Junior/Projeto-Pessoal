@@ -90,8 +90,8 @@ html{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid black;
-    box-shadow: #f01111;
+ 
+
   }
   
   .card2{
@@ -101,7 +101,7 @@ html{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid black;
+    
   }
   
   .card3{
@@ -111,7 +111,7 @@ html{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid black;
+
   }
   
   .valores p{
