@@ -1,0 +1,152 @@
+.cursor {
+  cursor: url('../../Identidade\ Visual/zoro.ani'), auto;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+color: grey;
+}
+
+body::-webkit-scrollbar {
+width: 35px;
+}
+
+body::-webkit-scrollbar-track {
+border-left: #201e1e 1px solid;
+background-image: url(../../Identidade\ Visual/mar.png);
+}
+
+body::-webkit-scrollbar-thumb {
+background-image: url("../../Identidade\ Visual/sunny.png"),
+linear-gradient(100deg, transparent, transparent);
+background-position: center ;
+background-repeat: no-repeat, no-repeat;
+background-size: 60px;
+height: 25px;
+}
+
+/* Header */
+.header {
+  background-color: rgb(209, 169, 83);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+font-weight: 700;
+  border-bottom: 3px solid black;
+}
+
+.header img {
+  height: 80px;
+}
+
+.active {
+  color: rgb(59, 59, 59);
+  font-weight: bold;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 100%;
+  margin-left: 10%;
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  padding: 0;
+  width: 600px;
+  align-items: center;
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(59, 59, 59);
+}
+
+.navbar a:hover {
+  transition: 0.7s;
+  color: rgb(187, 28, 0);
+  font-size: +20px;
+  font-weight: bold;
+}
+
+/* Banner */
+
+p{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+ /* Footer */
+
+ .footer {
+  background-color: #201e1e;
+  font-family: roboto;
+  color: white;
+  font-size: 12px;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .container {
+  width: 90%;
+  height: 40%;
+}
+
+.footer .container .left {
+  float: left;
+  width: 38.1%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer .container .center {
+  float: left;
+  width: 38.3%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer .container .right {
+  float: left;
+  width: 23.1%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right .icones {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icones img {
+  height: 25px;
+}
+
+.card1_texto a:hover{
+  color: rgb(211, 130, 9);
+}
+
+.card2_texto a:hover{
+  color: rgb(211, 130, 9);
+}
+
+.footer a{
+  color: white
+}
