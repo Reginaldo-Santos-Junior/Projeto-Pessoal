@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="plantacoes.css">
+    <link rel="stylesheet"
+        href="../css global/estilo.css">
+    <link rel="icon"
+        href="../assets/Identidade Visual/favicon.ico">
+    <title>SunBean | Plantações</title>
+</head>
+
+<body>
+    <div class="lateral">
+        <div class="container">
+            <img class="foto" src="../assets/Identidade Visual/user-soja-emporio.png">
+            <div id="username"></div>
+            <!-- <h2>Usuário Titular</h2> -->
+            
+            <ul class="navbarra">
+                <li><a href="../Monitoramento/monitoramento.html">Monitoramento</a></li>
+                <li><a href="../Registros/registros.html">Registros</a></li>
+                <li class="ativa">Plantações</li>
+                <li><a href="../acesso/acesso.html">Acesso</a></li>
+            </ul>
+            <div class="logout">
+                <li><a href="../Login/login.html">Sair</a></li>
+                <img class="sair" src="../assets/Identidade Visual/iconelogout.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="ola">
+            <img class="idvisual" src="../assets/Identidade Visual/Logo PNG.png">
+            <div class="separador"></div>
+            <h4 id="bemvindo"></h4>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <div class="leftbox">
+                    <div class="div_1">
+                        <img src="../assets/Identidade Visual\Logo PNG monocromatica copy.png"
+                            class="logo_mono">
+                    </div>
+                    <div class="div_2">
+                        <p class="texto1"> Para poder solicitar a instalação dos sensores na sua plantação, conte-nos um
+                            pouco sobre ela 
+                        </p>
+                        <img src="../assets/Identidade Visual/seta.svg">
+                    </div>
+                    <div class="div_3">
+                        <img src="../assets/Identidade Visual/Gardening-cuate (2).png"
+                            class="imagem_cadastro">
+                    </div>
+                </div>
+                <div class="rightbox" id="right_box">
+
+                    <p class="texto_cadastro">Cadastro de plantação</p>
+
+                    <div class="conjunto_ipts">
+
+                        <div class="div_ipts">
+                            <p>Nome ou identificação</p><input type="text" id="ipt_nome"
+                                placeholder="Exemplo: 'Plantação1'">
+                            <p>Hectares plantados</p><input type="number" id="ipt_hectares"
+                                placeholder="Quantidade de hectares">
+                        </div>
+
+                        <div class="div_ipts">
+                            <p>CEP do local</p><input type="text" id="ipt_cep" placeholder="00000-000">
+                            <p>Número do local</p><input type="number" id="ipt_numero" placeholder="Exemplo: '1024'">
+                        </div>
+                    </div>
+
+                    <div class="botao">
+                        <button onclick="cadastrar()">Cadastrar plantação</button>
+                    </div>
+
+                </div>
+            </div>
+            <p class="texto_2">Plantações cadastradas:</p>
+
+        </div>
+
+        <div class="textos">
+            <div class="card">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome:</th>
+                            <th>Hectares:</th>
+                            <th>CEP:</th>
+                            <th>Número:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="td_nome"></td>
+                            <td id="td_qtdHectares"></td>
+                            <td id="td_cep"></td>
+                            <td id="td_numero"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <ul class="plantio">
+                    <li>Nome:</li>
+                    <li>Hectares</li>
+                    <li>CEP:</li>
+                    <li>Número:</li>
+                </ul> -->
+
+            </div>
+        </div>
+    </body>
+    
+    </html>
+
+<script>
+    var usuario = sessionStorage.getItem('NOME_USUARIO')
+    username.innerHTML = usuario[0].toLocaleUpperCase() + usuario.substr(1); // esta formatado para a primeira letra ser Maiuscula
+    bemvindo.innerHTML = `Olá, <b>${usuario[0].toLocaleUpperCase() + usuario.substr(1)}</b>. Seja bem-vindo(a)!`
+
+    function cadastrar() {
+        var nomeVar = ipt_nome.value
+        var qtdHectaresVar = Number(ipt_hectares.value)
+        var cepVar = ipt_cep.value
+        var numeroVar = ipt_numero.value
+
+        right_box.innerHTML =
+
+            `<div class='div_cima'>
+                <div id='div_plantacao'></div>
+                <img id= confirma >
+                </div>
+                <div class= 'tudo_certo'> 
+                Tudo certo!<br> 
+                <br>Entre em 
+                <span onclick="contact()">
+                    <u>contato</u>
+                </span> 
+                conosco para solicitar a instalação dos sensores nesta plantação <br><br>
+                <span onclick="refresh()">
+                   <u>Cadastre outra plantação</u>
+                </span>
+             </div>`
+
+        confirma.src = "../assets/Identidade Visual/confirma.png"
+        div_plantacao.innerHTML = `<b>${nomeVar}</b><br>
+        ${qtdHectaresVar} hectares<br>
+        CEP: ${cepVar}<br>
+        Número: ${numeroVar}`
+
+
+    fetch("/usuarios/plantacao", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+
+                nomeServer: nomeVar,
+                hectaresServer: hectaresVar,
+                cepServer: cepVar,
+                numeroServer: numeroVar
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                //cardErro.style.display = "block";
+
+                alert("Cadastro da plantação realizado com sucesso!");
+
+                setTimeout(() => {
+                    window.location.reload()
+                }, "2000")
+                
+                limparFormulario();
+                
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+           
+        });
+
+        return false;
+    }
+
+    // select * from usuario where fkTItular is not null and fkTitular = 2;
+
+    window.onload = function listarPlantacoes(){
+
+        // aguardar();  
+        fetch("/usuarios/listarPlantacoes").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("feed_container");
+                    var mensagem = document.createElement("span");
+                    feed.appendChild(mensagem);
+                    // finalizarAguardar();
+                    throw "Nenhum resultado encontrado!!";
+                }
+                  resposta.json().then(function (resposta) {
+                    var feed = document.getElementById("feed_container");
+                      for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i]; // i é a posição 0
+                            console.log(publicacao);
+                           
+                            // Aqui eu crio as var (let é a mesma coisa que var) dos dados que quero apresentar no site:
+                            // Temos que colocar publicação.Nome do campo do banco de dados:
+                            let nomePlantacao = publicacao.nome
+                            let hectares = publicacao.qtdHectares
+                            let cep = publicacao.cep
+                            let numero = publicacao.numero
+                            // Aqui eu aponto para onde meus dados irão para serem apresentados:
+                            td_nome.innerHTML += `${nomePlantacao} <br>`
+                            td_qtdHectares.innerHTML += `${hectares} <br>`
+                            td_cep.innerHTML += `${cep} <br>`
+                            td_numero.innerHTML += `${numero} <br>`
+
+
+                    }
+                    // finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+                // finalizarAguardar();
+            }
+        // }).catch(function (resposta) {
+        //     console.error(resposta);
+            // finalizarAguardar();
+        });
+    
+    }
+
+</script>
