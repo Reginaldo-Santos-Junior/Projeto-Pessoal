@@ -1,65 +1,39 @@
-/* Banner */
-.hero {
-    background-color: rgb(202, 202, 202);
-    height: 542px;
-    width: 100%;
-    background-image: url("../assets/Identidade Visual/hero_banner.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-  }
-  
-  .hero .container {
-    height: 60%;
-    width: 35%;
-    margin-left: 10%;
-    margin-top: 50px;
-  }
-  
-  .hero .container .texto_hero {
-    font-size: 40px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-weight: 500;
-  }
-  
-  .hero .container .texto_hero_descricao {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 16px;
-    color: #979797;
-  }
 
-  button a{
-      color: white;
-  }
-  
-  .hero button {
-    background-color: #5bb553;
-    border: 0;
-    border-radius: 20px;
-    padding: 10px;
-    width: 120px;
-    color: white;
-    margin-top: 25px;
-  }
-  
-  .hero button:hover {
-    color: rgba(255, 255, 255, 1);
-    box-shadow: 0 5px 25px rgba(0, 255, 0, 0.705);
-    cursor: pointer;
-  }
-  
+/* Banner */
+body{
+  margin: 0;
+}
+
+.hero .container .backgroundvideo{
+  display: flex;
+  margin: auto;
+  background-size: cover;
+  width: 82%;
+  height: 800px;
+  background-color: white;
+}
+
+.info_diaria{
+  display: flex;
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+}
+
   /* Conteúdo */
   html{
     scroll-behavior: smooth;
   }
   .valores{
+    background-color: white;
     height: 600px;
     display: flex;
+    margin: auto;
+    width: 82%;
     justify-content: center;
    }
+
   
   .valores img{
     width: 200px;
@@ -72,6 +46,11 @@
     width: 80%;
     height: 600px;
   }
+
+  .valores .container p{
+    font-weight: bolder;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
   
   .card{
     display: flex;
@@ -80,6 +59,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+ 
+
   }
   
   .card2{
@@ -89,6 +70,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    
   }
   
   .card3{
@@ -98,6 +80,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+
   }
   
   .valores p{
@@ -234,4 +217,9 @@
   width: 200px;
   }
 
-  
+  .texto_informação{
+    display: flex;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+  }
