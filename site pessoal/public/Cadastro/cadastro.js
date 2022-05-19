@@ -84,10 +84,7 @@ function validCadastro() {
      }
 
      /* Valida se a input cpf/cnpj possui 11 ou 14 caracteres */
-     else if (input_cpf_cnpj.value.length !== 11 && input_cpf_cnpj.value.length !== 14) {
-       input_cpf_cnpj.style.border = "thin solid #FF0000"
-       span_validacao.innerHTML = 'Valor inválido, digite um valor de 11 (cpf) ou 14 (cnpj) numeros'
-     }
+
 
      /* Valida se o número de telefone possui ao menos 10 digitos */
      else if (input_tel.value.length < 10 || input_tel.value.length > 11) {
