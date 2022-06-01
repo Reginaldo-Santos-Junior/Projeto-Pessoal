@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background-color: rgb(201, 149, 8);
+}
+.lateral {
+    background-color: #5bb553;
+    width: 15%;
+    height: 600px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.lateral .container {
+    width: 70%;
+    height: 90%;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.foto {
+    width: 80%;
+    border-radius: 50%;
+}
+
+.username {
+    background-color: #ffffff23;
+    width: 145%;
+    height: 70px;
+    align-items: center;
+    border-top: #3d7738;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.username h1 {
+    font-size: x-large;
+    margin: 2px;
+}
+
+.username h2 {
+    font-size: small;
+    font-weight: 100;
+    margin: 0%;
+}
+
+.navbar {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-decoration: none;
+    padding: 0%;
+    margin-left: 10px;
+}
+
+.lateral .navbar a:hover {
+    transition: 0.7s;
+    font-weight: bolder;
+    font-size: +19px;
+}
+
+.active {
+    font-weight: bolder;
+    font-size: large;
+    font-size: 15px;
+}
+
+.logout {
+    background-color: #ffffff23;
+    width: 145%;
+    height: 40px;
+    align-items: center;
+    border-top: #3d7738;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    list-style: none;
+}
+
+.logout li a {
+    font-size: large;
+}
+
+.sair {
+    width: 35px;
+    margin-left: 10px;
+}
+
+.memory-game {
+    height: 640px;
+    width: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.card {
+    height: calc(33.333% - 10px);
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .9s;
+}
+
+.card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: rgb(92, 187, 182);
+    backface-visibility: hidden;
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
