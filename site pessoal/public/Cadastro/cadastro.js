@@ -1,23 +1,20 @@
 function validCadastro() {
-  var nomeVar = input_nome_razao.value;
+  var nomeVar = input_nome.value;
   var telVar = input_tel.value;
   var senhaVar = input_senha.value;
-  var cpfVar = input_cpf_cnpj.value;
   var emailVar = input_email.value;
-  var confirmacaoSenhaVar = input_repetir_senha.value;
-  var idUsuarioLogado = sessionStorage.getItem("ID_USUARIO");
 
   /* Verifica se há algum input com valor vazio e ajusta o layout para o texto caber na tela caso houver */
-   if (input_nome_razao.value == '' || input_tel.value == '' || input_senha.value == '' || input_cpf_cnpj.value == '' || input_email.value == '' || input_repetir_senha.value == '') {
+   if (input_nome.value == '' || input_tel.value == '' || input_senha.value == '' || input_confirmar_email.value == '' || input_email.value == '' || input_repetir_senha.value == '') {
      span_validacao.innerHTML = 'Por favor preencha todos os campos';
      idcontainer2.style.marginTop = "-25px";
      texto_cadastro.style.marginBottom = "30px"
 
      /* marca o campo cpf/cnpj se estiver vazio */
-     if (input_cpf_cnpj.value !== '') {
-       input_cpf_cnpj.style.border = "none"
+     if (input_confirmar_email.value !== '') {
+       input_confirmar_email.style.border = "none"
      } else {
-       input_cpf_cnpj.style.border = "thin solid #FF0000"
+       input_confirmar_email.style.border = "thin solid #FF0000"
      }
 
      /* marca o campo email se estiver vazio */
@@ -28,10 +25,10 @@ function validCadastro() {
      }
 
      /* marca o campo nome/razão social se estiver vazio */
-     if (input_nome_razao.value !== '') {
-       input_nome_razao.style.border = "none"
+     if (input_nome.value !== '') {
+       input_nome.style.border = "none"
      } else {
-       input_nome_razao.style.border = "thin solid #FF0000"
+       input_nome.style.border = "thin solid #FF0000"
      }
 
      /* marca o campo senha se estiver vazio */
@@ -61,9 +58,9 @@ function validCadastro() {
      input_tel.style.border = "none"
      input_senha.style.border = "none"
      input_repetir_senha.style.border = "none"
-     input_nome_razao.style.border = "none"
+     input_nome.style.border = "none"
      input_email.style.border = "none"
-     input_cpf_cnpj.style.border = "none"
+     input_confirmar_email.style.border = "none"
 
      /* Valida se o email possui "@" */
      if (input_email.value.indexOf("@") == -1) {
@@ -78,13 +75,10 @@ function validCadastro() {
      }
 
      /* Valida se o nome possui mais de 6 caracteres */
-     else if (input_nome_razao.value.length < 6) {
-       input_nome_razao.style.border = "thin solid #FF0000"
+     else if (input_nome.value.length < 6) {
+       input_nome.style.border = "thin solid #FF0000"
        span_validacao.innerHTML = 'Nome deve conter no mínimo 6 digitos'
      }
-
-     /* Valida se a input cpf/cnpj possui 11 ou 14 caracteres */
-
 
      /* Valida se o número de telefone possui ao menos 10 digitos */
      else if (input_tel.value.length < 10 || input_tel.value.length > 11) {
@@ -112,14 +106,15 @@ function validCadastro() {
        chk_termos.style.outlineOffset = "-1px"
      }
 
-     /* Confirma o cadastro e abre a tela de monitoramento */
+     /* Confirma o cadastro e abre a tela de dashboard
+ */
      else {
        input_tel.style.border = "none"
        input_senha.style.border = "none"
        input_repetir_senha.style.border = "none"
-       input_nome_razao.style.border = "none"
+       input_nome.style.border = "none"
        input_email.style.border = "none"
-       input_cpf_cnpj.style.border = "none"
+       input_confirmar_email.style.border = "none"
 
        fetch("/usuarios/cadastrar", {
         method: "POST",
@@ -132,9 +127,7 @@ function validCadastro() {
             nomeServer: nomeVar,
             telServer: telVar,
             senhaServer: senhaVar,
-            cpfServer: cpfVar,
             emailServer: emailVar,
-            fkTitularServer: idUsuarioLogado
         })
     }).then(function (resposta) {
     

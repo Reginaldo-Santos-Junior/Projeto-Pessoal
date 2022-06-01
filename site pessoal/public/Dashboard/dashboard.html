@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dashboard
+.css">
+  <link rel="stylesheet" href="../css global/css-footer.css">
+  <link rel="icon" type="imagem/png" href="../Identidade Visual/favicon.ico" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>OnePieceX | Monitoramento</title>
+</head>
+
+<body>
+  <div class="lateral">
+    <div class="container">
+      <img class="foto" src="../Identidade Visual/user.png">
+      <div class="username">
+        <h1>Reginaldo Junior</h1>
+
+      </div>
+      <ul class="navbar">
+        <li class="active"><u>Registros</u></li>
+        <li><a href="#">Plano</a></li>
+        <li><a href="/joguinho da memoria/index.html">Jogo da Memoria</a></li>
+        <li><a href="#">Cruzadinha</a></li>
+      </ul>
+      <div class="logout">
+        <li><a href="../Login/login.html">Sair</a></li>
+        <img class="sair" src="../Identidade Visual/iconelogout.png">
+      </div>
+    </div>
+  </div>
+
+  <div class="banner">
+    <div class="ola">
+      <img class="idvisual" src="../Identidade Visual/pngwing.com.png" style="height: 70px; width: 70px;">
+      <div class="separador"></div>
+      <h4>Olá, <b>Reginaldo Junior</b>. Seja bem-vindo(a)!</h4>
+    </div>
+
+    <div class="container">
+      <div class="temporeal">
+        <div class="div_dashboard">
+          <div>
+            <canvas id="grafico_linha" style="position: relative; height:80vh; width:40vw"></canvas>
+          </div>
+        </div>
+
+        <div class="div_dashboard">
+          <div>
+            <canvas id="grafico_barra" style="position: relative; height:80vh; width: 40vw"></canvas>
+          </div>
+        </div>
+
+        <div class="estado">
+          <h1>
+            Bando Favorito
+          </h1>
+          <a href=""></a>
+          <div class="info_temp">Bando favorito é o LAW!</div>
+          <img src="../Identidade Visual/bando.png" class="alerta">
+        </div>
+
+        <div class="estado2">
+          <h1>Jogos</h1>
+          <a href=""></a>
+          <div class="info_umid">O jogo favorito é o JOGO DA MEMORIA!</div>
+          <img src="../Identidade Visual/jogo.png" class="alerta">
+        </div>
+
+      </div>
+      <div class="embaixo">
+      </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+  const favoritos = [
+    'Big mom',
+    'Kaido',
+    'Luffy',
+    'Law'
+  ];
+
+  const horario = [
+    'Cruzadinha',
+    'Jogo da Memoria'
+  ];
+
+  const dataLinha = {
+    labels: favoritos,
+    datasets: [{
+      label: 'Bando Favorito',
+      backgroundColor: [
+    'green',
+    'red',
+    'yellow',
+    'black'
+    ],
+      borderColor: '#d4205',
+      data: [5,3,2,9],
+    }]
+  };
+
+  const dataBarra = {
+    labels: horario,
+    datasets: [{
+      label: 'Jogo favorito',
+      backgroundColor: [
+      'purple',
+      'blue'
+    ],
+      borderColor: 'rgb(8, 92, 74)',
+      data: [5, 8],
+    }]
+  };
+
+  const configLinha = {
+    type: 'pie',
+    data: dataLinha,
+    options: {}
+  };
+  const configBarra = {
+    type: 'bar',
+    data: dataBarra,
+    options: {}
+  };
+</script>
+
+<script>
+  const grafico_linha = new Chart(
+    document.getElementById('grafico_linha'),
+    configLinha
+  );
+
+  const grafico_barra = new Chart(
+    document.getElementById('grafico_barra'),
+    configBarra
+  );
+</script>
