@@ -7,7 +7,7 @@ body {
 .lateral {
     background-color: #c48527;
     width: 15%;
-    height: 600px;
+    height: 100vh;
     float: left;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -100,7 +100,7 @@ body {
 
 .banner {
     width: 85%;
-    height: 600px;
+    height: 100vh;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;

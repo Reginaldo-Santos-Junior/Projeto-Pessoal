@@ -7,27 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="dashboard
 .css">
-  <link rel="stylesheet" href="../css global/css-footer.css">
+  <script src="../js/funcoes.js"></script>
   <link rel="icon" type="imagem/png" href="../Identidade Visual/favicon.ico" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <title>OnePieceX | Monitoramento</title>
 </head>
 
-<body>
+<body onload="validarSessao()">
   <div class="lateral">
     <div class="container">
       <img class="foto" src="../Identidade Visual/user.png">
       <div class="username">
-        <h1>Reginaldo Junior</h1>
+        <h1 id="b_usuario"></h1>
 
       </div>
       <ul class="navbar">
         <li class="active"><u>Registros</u></li>
-        <li><a href="#">Plano</a></li>
         <li><a href="/joguinho da memoria/index.html">Jogo da Memoria</a></li>
         <li><a href="#">Cruzadinha</a></li>
       </ul>
-      <div class="logout">
+      <div class="logout" onclick="limparSessao()">
         <li><a href="../Login/login.html">Sair</a></li>
         <img class="sair" src="../Identidade Visual/iconelogout.png">
       </div>
@@ -38,7 +38,7 @@
     <div class="ola">
       <img class="idvisual" src="../Identidade Visual/pngwing.com.png" style="height: 70px; width: 70px;">
       <div class="separador"></div>
-      <h4>Olá, <b>Reginaldo Junior</b>. Seja bem-vindo(a)!</h4>
+      <h4>Olá, <b id="b_usuario2"></b>. Seja bem-vindo(a)!</h4>
     </div>
 
     <div class="container">
@@ -76,10 +76,10 @@
       </div>
     </div>
 </body>
-
 </html>
 
 <script>
+
   const favoritos = [
     'Big mom',
     'Kaido',

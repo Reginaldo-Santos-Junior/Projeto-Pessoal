@@ -76,7 +76,7 @@ function validLogin() {
                 console.log(JSON.stringify(json));
   
                 sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.NOME_USUARIO = json.nome_rs;
+                sessionStorage.NOME_USUARIO = json.nome;
                 sessionStorage.ID_USUARIO = json.idUsuario;
   
                 setTimeout(function () {
