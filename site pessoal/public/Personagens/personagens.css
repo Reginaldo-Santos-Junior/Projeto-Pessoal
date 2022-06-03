@@ -1,5 +1,9 @@
+html{
+background-image:url('../Identidade Visual/wallpaper-personagens.png');
+}
+
 .conteudo{
-    background-color: rgb(240, 184, 110);
+    background-color: rgb(197, 195, 192);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,25 +12,30 @@
     width: 80%;
     height: 1000px;
 }
+
+.conteudo h1{
+  color: black;
+}
+
 .carrosel {
     box-shadow: 2px 2px 4px black;
     overflow: hidden;
-    height: 400px;
-    width: 670px;
+    height: 800px;
+    width: 1000px;
     overflow-x: auto;
   }
-  .skins .carrosel::-webkit-scrollbar {
-    width: 12px;             
+  .carrosel::-webkit-scrollbar {
+    width: 9px;             
   }
   
-  .skins .carrosel::-webkit-scrollbar-track {
-    background: orange;        
+  .carrosel::-webkit-scrollbar-track {
+    background: rgb(255, 136, 0);        
   }
   
-  .skins .carrosel::-webkit-scrollbar-thumb {
-    background-color: blue;    
-    border-radius: 20px;       
-    border: 3px solid orange; 
+  .carrosel::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 0, 0);    
+    border-radius: 15px;       
+    border: 2px solid rgb(0, 0, 0); 
   }
 
   .items {
@@ -37,6 +46,6 @@
 
   .items img{
     object-fit: cover;
-    height: 400px;
-    width: 670px;
+    height: 800px;
+    width: 1000px;
   }

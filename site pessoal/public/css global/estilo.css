@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-color: grey;
+color: rgb(0, 0, 0);
 }
 
 body::-webkit-scrollbar {
@@ -85,16 +85,16 @@ p{
 
  /* Footer */
 
- .footer {
-  background-color: #201e1e;
-  font-family: roboto;
-  color: white;
-  font-size: 12px;
-  height: 100px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ .footer { 
+  background-color: #201e1e !important; 
+  font-family: roboto !important;
+  color: white !important;
+  font-size: 12px !important;
+  height: 100px !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .footer.historia{
@@ -153,5 +153,5 @@ p{
 }
 
 .footer a{
-  color: white
+  color: white 
 }
