@@ -8,6 +8,7 @@
     height:250px;
     width: 250px;
     margin-top: 10px;
+    border-radius: 50px;
   }
 
   .rightbox .conteiner{
@@ -61,7 +62,9 @@
   }
 
   button {
-    background-color: #5bb553;
+    margin-left: 45%;
+    margin-bottom: 25px;
+    background-color: #c96d18;
     border: 0;
     border-radius: 20px;
     padding: 10px;

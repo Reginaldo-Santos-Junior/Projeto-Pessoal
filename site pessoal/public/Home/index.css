@@ -8,13 +8,16 @@ body h1{
   color: black;
 }
 
+.hero .container{
+  width: 80%;
+  margin: auto;
+}
+
 .hero .container .backgroundvideo{
   display: flex;
   margin: auto;
-  background-size: cover;
-  width: 82%;
-  height: 800px;
-  background-color: white;
+  width: 100%;
+  border-radius: 100px;
 }
 
 .info_diaria{
@@ -59,33 +62,12 @@ body h1{
   .card{
     display: flex;
     margin: auto;
-    width: 33.3%;
+    width:30%;
+    height: 400px;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
- 
-
   }
   
-  .card2{
-    display: flex;
-    margin: auto;
-    width: 33.3%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    
-  }
-  
-  .card3{
-    display: flex;
-    margin: auto;
-    width: 33.3%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-
-  }
 
 
   .jolly_rogers{

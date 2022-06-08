@@ -32,17 +32,6 @@ function cadastrar(nome, telefone, senha, email) {
     return database.executar(instrucao);
 }
 
-function plantacao(nome, hectares, cep, numero) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, hectares, cep, numero);
-    
-    var instrucao = `
-            insert into plantacao (nome, cep, numero, qtdHectares) values
-            ('${nome}','${cep}','${numero}','${hectares}');
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao);
-}
-
 function novasenha(email, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function validSenha():", senha);
     
@@ -53,20 +42,10 @@ function novasenha(email, senha) {
     return database.executar(instrucao);
 }
 
-function listarPlantacoes() {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
-    var instrucao = `
-        SELECT * FROM plantacao;
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao);
-}
 
 module.exports = {
     entrar,
     cadastrar,
-    listarPlantacoes,
-    plantacao,
     novasenha,
     listar,
 };
