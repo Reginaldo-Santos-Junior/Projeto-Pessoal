@@ -3,12 +3,15 @@ background-image:url('../Identidade Visual/wallpaper-personagens.png');
 }
 
 .conteudo{
-    background-color: rgb(197, 195, 192);
+    background-color: rgba(136, 136, 132, 0.801);
+    box-shadow: 0 8px 32px 0 rgba(5, 9, 73, 0.623);
+    backdrop-filter: blur( 0.5px );
+    -webkit-backdrop-filter: blur( 0.5px );
+    border: 2px solid rgba( 255, 255, 255, 0.18 );
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;
-    border: 2px solid blue;
     width: 80%;
     height: 1000px;
 }

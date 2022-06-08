@@ -15,15 +15,9 @@ html{
 
 /* bloco de conteúdo esquerdo */
 .leftbox {
-  background-color: #5bb553;
   height: 550px;
   width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-radius: 15px;
 }
 /* bloco de conteúdo direito */
 .rightbox {
