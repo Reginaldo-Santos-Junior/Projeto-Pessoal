@@ -18,8 +18,8 @@ idJogo int primary key,
 nomeJogo varchar (30));
 
 insert into jogo values
-(1, 'Cruzadinha',0),
-(2,'Jogo da memoria',0);
+(1, 'Cruzadinha'),
+(2,'Jogo da memoria');
 
 select * from jogo;
 
