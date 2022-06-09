@@ -20,8 +20,12 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
-router.post("/novasenha", function (req, res) {
-    usuarioController.novasenha(req, res);
+router.post("/jogoNovo", function (req, res) {
+    usuarioController.jogoNovo(req, res);
+});
+
+router.post("/bandoFav", function (req, res) {
+    usuarioController.bandoFav(req, res);
 });
 
 

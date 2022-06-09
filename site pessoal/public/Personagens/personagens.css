@@ -3,7 +3,7 @@ background-image:url('../Identidade Visual/wallpaper-personagens.png');
 }
 
 .conteudo{
-    background-color: rgba(136, 136, 132, 0.801);
+    background-color: rgba(136, 136, 132, 0.863);
     box-shadow: 0 8px 32px 0 rgba(5, 9, 73, 0.623);
     backdrop-filter: blur( 0.5px );
     -webkit-backdrop-filter: blur( 0.5px );
@@ -32,11 +32,11 @@ background-image:url('../Identidade Visual/wallpaper-personagens.png');
   }
   
   .carrosel::-webkit-scrollbar-track {
-    background: rgb(255, 136, 0);        
+    background: rgb(0, 0, 0);        
   }
   
   .carrosel::-webkit-scrollbar-thumb {
-    background-color: rgb(255, 0, 0);    
+    background-color: rgba(233, 178, 27, 0.568);    
     border-radius: 15px;       
     border: 2px solid rgb(0, 0, 0); 
   }
@@ -47,7 +47,7 @@ background-image:url('../Identidade Visual/wallpaper-personagens.png');
     transform: translateX(0);
   }
 
-  .items img{
+  .items .img_1{
     object-fit: cover;
     height: 800px;
     width: 1000px;
